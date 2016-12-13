@@ -7,7 +7,7 @@ TARGETS=crc64-redis crc64-adler mem-speed
 all: $(TARGETS)
 
 %: %.c main.c
-	$(CC) $(CFLAGS) -O2 -o $@ $^ -lpthread
+	$(CC) $(CFLAGS) -O3 -march=native -o $@ $^ -lpthread
 
 mem-speed: mem-speed.c
 	$(CC) $(CFLAGS) -O0 -o $@ $^
